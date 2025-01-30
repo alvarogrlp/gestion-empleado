@@ -1,13 +1,16 @@
-public abstract class Empleado {
+package es.ies.puerto.gestion.model;
+import java.util.Objects;
+
+public class Empleado {
     String nombre;
-    Int edad;
+    int edad;
     Double salarioBase;
 
 
     public Empleado() {
     }
 
-    public Empleado(String nombre, Int edad, Double salarioBase) {
+    public Empleado(String nombre, int edad, Double salarioBase) {
         this.nombre = nombre;
         this.edad = edad;
         this.salarioBase = salarioBase;
@@ -21,11 +24,11 @@ public abstract class Empleado {
         this.nombre = nombre;
     }
 
-    public Int getEdad() {
+    public int getEdad() {
         return this.edad;
     }
 
-    public void setEdad(Int edad) {
+    public void setEdad(int edad) {
         this.edad = edad;
     }
 
@@ -42,7 +45,7 @@ public abstract class Empleado {
         return this;
     }
 
-    public Empleado edad(Int edad) {
+    public Empleado edad(int edad) {
         setEdad(edad);
         return this;
     }
@@ -51,15 +54,11 @@ public abstract class Empleado {
         setSalarioBase(salarioBase);
         return this;
     }
-
-    public Double calcularSalarioBase(){
-
-    }
-
-    public String mostrarInformacion(){
-
-    }
     
+    public Double calcularSalarioBase(){
+        return 0.1;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == this)
@@ -68,7 +67,7 @@ public abstract class Empleado {
             return false;
         }
         Empleado empleado = (Empleado) o;
-        return Objects.equals(nombre, empleado.nombre) && Objects.equals(edad, empleado.edad) && Objects.equals(salarioBase, empleado.salarioBase);
+        return Objects.equals(nombre, empleado.nombre) && edad == empleado.edad && Objects.equals(salarioBase, empleado.salarioBase);
     }
 
     @Override
@@ -79,4 +78,5 @@ public abstract class Empleado {
             ", salarioBase='" + getSalarioBase() + "'" +
             "}";
     }
+    
 }

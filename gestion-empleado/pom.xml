@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>es.jpexposito.app</groupId>
-    <artifactId>mi-app</artifactId>
+    <groupId>es.ies.puerto.gestion</groupId>
+    <artifactId>gestion-empleado</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
