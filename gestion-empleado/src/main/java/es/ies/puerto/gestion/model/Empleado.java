@@ -1,11 +1,10 @@
 package es.ies.puerto.gestion.model;
 import java.util.Objects;
 
-public class Empleado {
+abstract class Empleado {
     String nombre;
     int edad;
     Double salarioBase;
-
 
     public Empleado() {
     }
@@ -55,8 +54,8 @@ public class Empleado {
         return this;
     }
     
-    public Double calcularSalarioBase(){
-        return 0.1;
+    public Double calcularSalarioFinal(){
+        return getSalarioBase();
     }
 
     @Override
@@ -67,7 +66,7 @@ public class Empleado {
             return false;
         }
         Empleado empleado = (Empleado) o;
-        return Objects.equals(nombre, empleado.nombre) && edad == empleado.edad && Objects.equals(salarioBase, empleado.salarioBase);
+        return Objects.equals(nombre, empleado.nombre) && Objects.equals(salarioBase, empleado.salarioBase);
     }
 
     @Override
